@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.deps/
+pip-install*.log
+*.log
+.cache/
+data/
+artifacts/
+checkpoints/
+outputs/
+.pytest_cache/
+submission/build/
+submission/template/
+*.pptx.inspect.ndjson
