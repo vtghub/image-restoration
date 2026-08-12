@@ -46,4 +46,5 @@ Last updated: 2026-08-12
 | 2026-08-11 | Created submission notes and official-template deck draft. | Deck contains measured evidence; placeholders remain only for team/link data. |
 | 2026-08-11 | Promoted baseline through GitHub `feature → develop → main`. | Feature `c791439`, develop promotion `239425c`, main promotion `bb6cc20`. |
 | 2026-08-12 | Established living planning, memory, and diagram documentation. | This document and the three Mermaid diagrams are now the incremental-update baseline. |
-| 2026-08-12 | Added Kaggle P100/T4 experiment runner, candidate profiles, and notebook source. | GPU execution is prepared but not started because the available Kaggle session is signed out. |
+| 2026-08-12 | Added Kaggle P100/T4 experiment runner, candidate profiles, and notebook source. | GPU execution is prepared; Kaggle sign-in was subsequently verified. |
+| 2026-08-12 | Added public-archive bootstrap to the Kaggle notebook flow. | The private notebook can download/extract official training data without a manual Kaggle dataset upload. |
