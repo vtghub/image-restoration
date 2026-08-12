@@ -14,16 +14,17 @@ Deliver a reproducible, standalone image-restoration solution for the i4C/KLA se
 | 2. Robust training and ablations | Complete | Robust configuration improved matched validation results. |
 | 3. Held-out validation and test inference | Complete | 480-image held-out metrics and 400 official test outputs. |
 | 4. Submission package | In progress | Code, lockfile, notes, and template deck exist; publication fields remain. |
-| 5. Performance scaling | Planned | Train and compare larger CUDA/H100 candidates. |
+| 5. Performance scaling | In progress | Kaggle P100/T4 runner and candidate matrix are ready; GPU results pending. |
 
 ## Next work
 
 1. Publish the repository and a checkpoint-download location that inference can obtain automatically.
 2. Replace bracketed team, contact, GitHub, and optional-demo fields in the official deck; export the final PDF.
 3. Run clean-environment inference using the public repository instructions.
-4. When CUDA/H100 is available, run the candidate matrix below and promote only a measured improvement.
+4. Attach the official data to Kaggle, run the `smoke` profile on P100/T4, then run `full` after the GPU and data gate pass.
+5. Promote only a measured improvement and record it in project memory.
 
-## CUDA/H100 candidate matrix
+## Kaggle P100/T4 candidate matrix
 
 | Candidate | Change | Keep only if |
 | --- | --- | --- |
@@ -38,6 +39,7 @@ Deliver a reproducible, standalone image-restoration solution for the i4C/KLA se
 - Evaluation accepts an input directory and writes one output per input without source edits.
 - All metrics are reported on an immutable, recorded validation split.
 - A promoted model has recorded configuration, weights location, metrics, latency, and visual comparison.
+- The Kaggle `smoke` profile detects CUDA and produces a complete `scoreboard.json` before the full profile is run.
 - Submission metadata contains no bracketed placeholders.
 
 ## Risks and mitigations

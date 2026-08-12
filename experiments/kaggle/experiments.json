@@ -1,0 +1,56 @@
+{
+  "smoke": [
+    {
+      "name": "compact_smoke",
+      "epochs": 5,
+      "batch_size": 16,
+      "learning_rate": 0.0002,
+      "synthetic_probability": 0.35,
+      "gradient_weight": 0.1,
+      "width": 48,
+      "blocks": 10
+    },
+    {
+      "name": "wide_smoke",
+      "epochs": 5,
+      "batch_size": 12,
+      "learning_rate": 0.0002,
+      "synthetic_probability": 0.35,
+      "gradient_weight": 0.1,
+      "width": 64,
+      "blocks": 14
+    }
+  ],
+  "full": [
+    {
+      "name": "compact_70e",
+      "epochs": 70,
+      "batch_size": 32,
+      "learning_rate": 0.0002,
+      "synthetic_probability": 0.35,
+      "gradient_weight": 0.1,
+      "width": 48,
+      "blocks": 10
+    },
+    {
+      "name": "wide_90e",
+      "epochs": 90,
+      "batch_size": 16,
+      "learning_rate": 0.00018,
+      "synthetic_probability": 0.35,
+      "gradient_weight": 0.1,
+      "width": 64,
+      "blocks": 14
+    },
+    {
+      "name": "wide_robust_90e",
+      "epochs": 90,
+      "batch_size": 16,
+      "learning_rate": 0.00018,
+      "synthetic_probability": 0.55,
+      "gradient_weight": 0.12,
+      "width": 64,
+      "blocks": 14
+    }
+  ]
+}

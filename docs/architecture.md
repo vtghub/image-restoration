@@ -21,6 +21,10 @@ flowchart LR
     L --> M[score.py\nPSNR · SSIM · LPIPS]
     L --> N[visualize_results.py\ncomparison panels]
 
+    C --> O[experiments/kaggle/run_experiments.py\nP100/T4 candidate matrix]
+    O --> P[Per-run checkpoints + predictions]
+    P --> Q[scoreboard.json\nranked PSNR / SSIM]
+
     subgraph Network[1-channel residual 2× network]
       F1[3×3 stem] --> F2[Residual blocks\nGroupNorm + depthwise conv]
       F2 --> F3[Fusion + skip]
@@ -36,6 +40,6 @@ flowchart LR
 - `restoration/io.py` owns supported image discovery and grayscale read/write behavior.
 - `restoration/data.py` owns pairing, augmentation, cropping, and normalization.
 - `restoration/model.py` owns only the neural model topology.
-- Command-line scripts orchestrate input/output paths and create reproducible artifacts.
+- Command-line scripts orchestrate input/output paths and create reproducible artifacts. The Kaggle runner composes those existing entry points rather than duplicating training logic.
 
 Update this diagram whenever a pipeline component, model boundary, persisted artifact, or evaluation dependency changes.

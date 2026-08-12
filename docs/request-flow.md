@@ -44,3 +44,19 @@ sequenceDiagram
 | GPU unavailable | Defaults to CPU. | Use `--device cuda` only when a compatible CUDA runtime is available. |
 
 Update this diagram and table whenever CLI arguments, validation, batching, hardware selection, output rules, or error behavior change.
+
+## Kaggle iteration flow
+
+```mermaid
+flowchart LR
+    A[Attach official Kaggle dataset] --> B[Run audit]
+    B --> C{CUDA P100/T4 available?}
+    C -- No --> D[Stop and enable accelerator]
+    C -- Yes --> E[Run smoke profile]
+    E --> F{scoreboard.json complete?}
+    F -- No --> G[Inspect run logs and data layout]
+    F -- Yes --> H[Run full candidate profile]
+    H --> I[Ranked PSNR / SSIM scoreboard]
+    I --> J[LPIPS + visual finalist gate]
+    J --> K[Update memory and promote measured winner]
+```
