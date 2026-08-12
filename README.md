@@ -69,3 +69,7 @@ python visualize_results.py --input-dir data/train/NoisyLR --prediction-dir outp
 ## Submission handoff
 
 See `submission/SUBMISSION_NOTES.md` for the measured checkpoint, exact environment lockfile, required publish steps, and official-deck handoff. A prefilled official-template deck is available at `submission/TeamName_KLA_PS01_DRAFT.pptx`; replace its bracketed team and publication fields before exporting the required PDF.
+
+## Living project documentation
+
+The project plan, decision memory, and incremental Mermaid diagrams are versioned in [`docs/`](docs/README.md). Update them with each material code, experiment, or delivery change.
