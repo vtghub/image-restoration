@@ -37,7 +37,9 @@ mindmap
       Official-template deck draft
       Feature/develop/main workflow
     Planned scaling
-      CUDA/H100 candidates
+      Kaggle P100/T4 candidates
+      Smoke GPU/data gate
+      Ranked scoreboard
       OOD/source-held-out checks
       Published weights
       Final PDF and demo
