@@ -29,13 +29,16 @@ Last updated: 2026-08-12
 | --- | --- | ---: | ---: | ---: | --- |
 | `baseline_cpu` | 480 held-out images | 26.5384 | 0.67859 | 0.38675 | 5-epoch compact baseline. |
 | `final_cpu` | 480 held-out images | 27.19862 | 0.7129819 | 0.3698113 | Best robust CPU checkpoint; selected result. |
+| `compact_smoke` | 480 held-out images | 27.20927 | 0.7120021 | — | T4, 5 epochs; 10.48 ms/image GPU model inference. PSNR is slightly above `final_cpu`; SSIM is slightly below, so it is not promoted. |
+| `wide_smoke` | 480 held-out images | 27.50970 | 0.7262243 | — | T4, 5 epochs, width 64 / 14 blocks; 20.17 ms/image GPU model inference. Smoke winner, +0.31108 PSNR and +0.01324 SSIM over `final_cpu`. |
 
 ## Open items
 
 1. Publish a checkpoint distribution location and verify a clean clone can run inference.
 2. Fill the official deck's identity and publication fields, then export PDF.
-3. Run CUDA/H100 candidate experiments and record results before replacing the CPU checkpoint.
-4. Kaggle is currently unauthenticated in the working browser; a signed-in account and attached official dataset are required to execute the prepared GPU notebook.
+3. Complete the active T4 full candidate profile, then record LPIPS and visual-finalist evidence before replacing the CPU checkpoint.
+4. Kaggle execution is authenticated and uses a private Internet-enabled notebook. The public official archive bootstrap completed successfully.
+5. The current Kaggle PyTorch build cannot execute on a P100 (`sm_60`): it raises `CUDA error: no kernel image is available for execution on the device`. The notebook has been moved to the supported T4 (`sm_75`) runtime.
 
 ## Change log
 
@@ -48,3 +51,5 @@ Last updated: 2026-08-12
 | 2026-08-12 | Established living planning, memory, and diagram documentation. | This document and the three Mermaid diagrams are now the incremental-update baseline. |
 | 2026-08-12 | Added Kaggle P100/T4 experiment runner, candidate profiles, and notebook source. | GPU execution is prepared; Kaggle sign-in was subsequently verified. |
 | 2026-08-12 | Added public-archive bootstrap to the Kaggle notebook flow. | The private notebook can download/extract official training data without a manual Kaggle dataset upload. |
+| 2026-08-12 | Verified the live Kaggle data and accelerator gates. | Public archive download completed; audit reported 3,200 pairs, zero pairing/scale failures, 128×128 LR to 256×256 GT. P100 failed because the current PyTorch image excludes `sm_60`; T4 smoke training is active. |
+| 2026-08-12 | Completed T4 smoke matrix and started the T4 full profile. | `wide_smoke` won at PSNR 27.50970 / SSIM 0.7262243 on 480 images, ahead of the CPU baseline by +0.31108 / +0.01324. The full profile is now running `compact_70e`, `wide_90e`, and `wide_robust_90e`. |
