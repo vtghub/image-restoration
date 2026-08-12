@@ -4,15 +4,8 @@ This folder runs the same candidate matrix on a Kaggle P100 or T4 notebook. The 
 
 ## One-time Kaggle setup
 
-1. Create a Kaggle Dataset containing the official archive with this layout:
-
-   ```text
-   <dataset-root>/train/NoisyLR/
-   <dataset-root>/train/GT/
-   ```
-
-2. Create a notebook, attach that dataset, enable an accelerator (P100 or T4), and turn Internet on only while cloning or installing dependencies.
-3. Upload or clone this repository, then use `kaggle_gpu_iteration.ipynb` as the executable notebook source.
+1. Create a private notebook, enable an accelerator (P100 or T4), and turn Internet on while cloning, installing dependencies, and downloading the public official archive.
+2. Clone this repository, then use `kaggle_gpu_iteration.ipynb` as the executable notebook source. `bootstrap_data.py` downloads and extracts the archive beneath `/kaggle/working/data/train`.
 
 The notebook writes all result files below `/kaggle/working/runs`. Save a version after each candidate matrix so checkpoints and the `scoreboard.json` are retained as notebook output.
 
