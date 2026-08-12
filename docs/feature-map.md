@@ -37,8 +37,10 @@ mindmap
       Official-template deck draft
       Feature/develop/main workflow
     Planned scaling
-      Kaggle P100/T4 candidates
+      Kaggle T4 candidates
+      P100 compatibility check
       Smoke GPU/data gate
+      Measured wide smoke winner
       Ranked scoreboard
       OOD/source-held-out checks
       Published weights

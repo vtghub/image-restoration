@@ -49,10 +49,11 @@ Update this diagram and table whenever CLI arguments, validation, batching, hard
 
 ```mermaid
 flowchart LR
-    A[Attach official Kaggle dataset] --> B[Run audit]
-    B --> C{CUDA P100/T4 available?}
-    C -- No --> D[Stop and enable accelerator]
-    C -- Yes --> E[Run smoke profile]
+    A[Bootstrap public official archive] --> B[Run audit]
+    B --> C{Compatible CUDA GPU available?}
+    C -- P100 sm_60 unsupported --> D[Switch to T4 sm_75]
+    C -- Compatible --> E[Run smoke profile]
+    D --> E
     E --> F{scoreboard.json complete?}
     F -- No --> G[Inspect run logs and data layout]
     F -- Yes --> H[Run full candidate profile]
