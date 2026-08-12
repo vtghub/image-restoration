@@ -14,14 +14,14 @@ Deliver a reproducible, standalone image-restoration solution for the i4C/KLA se
 | 2. Robust training and ablations | Complete | Robust configuration improved matched validation results. |
 | 3. Held-out validation and test inference | Complete | 480-image held-out metrics and 400 official test outputs. |
 | 4. Submission package | In progress | Code, lockfile, notes, and template deck exist; publication fields remain. |
-| 5. Performance scaling | In progress | Kaggle P100/T4 runner and candidate matrix are ready; GPU results pending. |
+| 5. Performance scaling | In progress | T4 smoke passed: `wide_smoke` reached PSNR 27.50970 / SSIM 0.7262243 on 480 images; the full three-candidate profile is running. |
 
 ## Next work
 
 1. Publish the repository and a checkpoint-download location that inference can obtain automatically.
 2. Replace bracketed team, contact, GitHub, and optional-demo fields in the official deck; export the final PDF.
 3. Run clean-environment inference using the public repository instructions.
-4. Attach the official data to Kaggle, run the `smoke` profile on P100/T4, then run `full` after the GPU and data gate pass.
+4. Monitor the active T4 `full` profile (`compact_70e`, `wide_90e`, and `wide_robust_90e`), then apply LPIPS, visual, and latency gates to its winner.
 5. Promote only a measured improvement and record it in project memory.
 
 ## Kaggle P100/T4 candidate matrix
@@ -50,3 +50,4 @@ Deliver a reproducible, standalone image-restoration solution for the i4C/KLA se
 | Larger model is too slow | Benchmark warm CPU/GPU inference and retain a compact fallback. |
 | Unpublished checkpoint breaks evaluator use | Publish the model location and test a fresh setup before submission. |
 | Deck is submitted with incomplete identity/link data | Use the submission checklist and final PDF review. |
+| Current Kaggle PyTorch image has no P100 (`sm_60`) kernel support | Use the selected T4 runtime; record the exact image/runtime finding in the experiment evidence. |
