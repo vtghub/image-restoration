@@ -1,6 +1,6 @@
 # Request flow
 
-Last updated: 2026-08-12
+Last updated: 2026-08-15
 
 ```mermaid
 sequenceDiagram
@@ -57,7 +57,7 @@ flowchart LR
     E --> F{scoreboard.json complete?}
     F -- No --> G[Inspect run logs and data layout]
     F -- Yes --> H[Run full candidate profile]
-    H --> I[Ranked PSNR / SSIM scoreboard]
-    I --> J[LPIPS + visual finalist gate]
+    H --> I[Ranked PSNR / SSIM scoreboard\nwide_90e leads full T4 matrix]
+    I --> J[LPIPS + visual + latency finalist gate]
     J --> K[Update memory and promote measured winner]
 ```

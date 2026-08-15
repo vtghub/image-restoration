@@ -1,6 +1,6 @@
 # Architecture
 
-Last updated: 2026-08-12
+Last updated: 2026-08-15
 
 ```mermaid
 flowchart LR
@@ -24,6 +24,7 @@ flowchart LR
     C --> O[experiments/kaggle/run_experiments.py\nP100/T4 candidate matrix]
     O --> P[Per-run checkpoints + predictions]
     P --> Q[scoreboard.json\nranked PSNR / SSIM]
+    Q --> R[Measured T4 full winner\nwide_90e]
 
     subgraph Network[1-channel residual 2× network]
       F1[3×3 stem] --> F2[Residual blocks\nGroupNorm + depthwise conv]
