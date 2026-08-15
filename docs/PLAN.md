@@ -1,6 +1,6 @@
 # Delivery plan
 
-Last updated: 2026-08-12
+Last updated: 2026-08-15
 
 ## Objective
 
@@ -14,15 +14,15 @@ Deliver a reproducible, standalone image-restoration solution for the i4C/KLA se
 | 2. Robust training and ablations | Complete | Robust configuration improved matched validation results. |
 | 3. Held-out validation and test inference | Complete | 480-image held-out metrics and 400 official test outputs. |
 | 4. Submission package | In progress | Code, lockfile, notes, and template deck exist; publication fields remain. |
-| 5. Performance scaling | In progress | T4 smoke passed: `wide_smoke` reached PSNR 27.50970 / SSIM 0.7262243 on 480 images; the full three-candidate profile is running. |
+| 5. Performance scaling | In progress | Full T4 matrix is complete: `wide_90e` leads at PSNR 28.22139 / SSIM 0.7544604 on 480 images. LPIPS, visual, latency, and publication gates remain before checkpoint promotion. |
 
 ## Next work
 
 1. Publish the repository and a checkpoint-download location that inference can obtain automatically.
 2. Replace bracketed team, contact, GitHub, and optional-demo fields in the official deck; export the final PDF.
 3. Run clean-environment inference using the public repository instructions.
-4. Monitor the active T4 `full` profile (`compact_70e`, `wide_90e`, and `wide_robust_90e`), then apply LPIPS, visual, and latency gates to its winner.
-5. Promote only a measured improvement and record it in project memory.
+4. Apply LPIPS, visual defect-preservation, and deployment-latency gates to T4 winner `wide_90e` before replacing the selected CPU checkpoint.
+5. Publish the selected checkpoint with a checksum, run clean-environment inference, and record the promotion in project memory.
 
 ## Kaggle P100/T4 candidate matrix
 
