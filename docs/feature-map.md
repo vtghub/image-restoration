@@ -1,6 +1,6 @@
 # Feature map
 
-Last updated: 2026-08-12
+Last updated: 2026-08-15
 
 ```mermaid
 mindmap
@@ -36,12 +36,14 @@ mindmap
       Submission notes
       Official-template deck draft
       Feature/develop/main workflow
-    Planned scaling
-      Kaggle T4 candidates
+    Measured scaling
+      Kaggle T4 full candidate matrix
       P100 compatibility check
       Smoke GPU/data gate
       Measured wide smoke winner
-      Ranked scoreboard
+      Measured wide_90e full winner
+      Ranked full scoreboard
+    Planned scaling
       OOD/source-held-out checks
       Published weights
       Final PDF and demo
